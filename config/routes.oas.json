@@ -1,0 +1,107 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "julianlabs_api",
+    "version": "1.0.0",
+    "license": {
+      "name": "ISC"
+    },
+    "description": "Specification JSONs: [v2](/api-spec/v2), [v3](/api-spec/v3)."
+  },
+  "paths": {
+    "/api/auth/register": {
+      "post": {
+        "summary": "/api/auth/register",
+        "responses": {},
+        "tags": [],
+        "operationId": "4ff549ae-7420-42c9-a00c-ed59cc262e54",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://origin-xyz.julian-labs.com"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        }
+      }
+    },
+    "/api/auth/login": {
+      "post": {
+        "summary": "/api/auth/login",
+        "responses": {},
+        "tags": [],
+        "operationId": "ae4167e1-563c-4d2a-b876-ca79df201790",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://origin-xyz.julian-labs.com"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        }
+      }
+    },
+    "/api/auth/users": {
+      "get": {
+        "summary": "/api/auth/users",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number"
+                      },
+                      "email": {
+                        "type": "string"
+                      },
+                      "password": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "email",
+                      "password"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [],
+        "operationId": "5372ef7d-0df8-4ab8-b546-ec47d4e24753",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://origin-xyz.julian-labs.com"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        }
+      }
+    }
+  },
+  "tags": []
+}
