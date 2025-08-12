@@ -101,6 +101,29 @@
           }
         }
       }
+    },
+    "/api/chat": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "/api/chat",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlRewriteHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "rewritePattern": "https://api.openai.com/v1/responses"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "fdc00580-2a10-4249-9f3d-44efef43649a"
+      }
     }
   },
   "tags": []

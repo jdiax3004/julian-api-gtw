@@ -2,32 +2,15 @@
   "policies": [
     {
       "handler": {
-        "export": "SetHeadersInboundPolicy",
+        "export": "ApiKeyInboundPolicy",
         "module": "$import(@zuplo/runtime)",
         "options": {
-          "headers": [
-            {
-              "name": "julian",
-              "value": "test"
-            }
-          ]
+          "allowUnauthenticatedRequests": false,
+          "cacheTtlSeconds": 60
         }
       },
-      "name": "set-headers-inbound",
-      "policyType": "set-headers-inbound"
-    },
-    {
-      "handler": {
-        "export": "RateLimitInboundPolicy",
-        "module": "$import(@zuplo/runtime)",
-        "options": {
-          "rateLimitBy": "ip",
-          "requestsAllowed": 2,
-          "timeWindowMinutes": 1
-        }
-      },
-      "name": "rate-limit-inbound",
-      "policyType": "rate-limit-inbound"
+      "name": "api-key-inbound",
+      "policyType": "api-key-inbound"
     }
   ]
 }
