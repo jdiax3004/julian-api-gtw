@@ -124,6 +124,88 @@
         },
         "operationId": "fdc00580-2a10-4249-9f3d-44efef43649a"
       }
+    },
+    "/api/auth/flex/configure": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "/api/auth/flex/configure",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://origin-xyz.julian-labs.com"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "new-route-45f57e16"
+      },
+      "get": {
+        "summary": "/api/auth/flex/configure",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://origin-xyz.julian-labs.com"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "new-route-bf445545"
+      },
+      "delete": {
+        "summary": "/api/auth/flex/configure",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://origin-xyz.julian-labs.com"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "new-route-7d5e7f75"
+      }
+    },
+    "/api/auth/flex": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "/api/auth/flex",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://origin-xyz.julian-labs.com"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "new-route-f31089e5"
+      }
     }
   },
   "tags": []
