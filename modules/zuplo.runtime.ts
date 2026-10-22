@@ -5,6 +5,7 @@ import {
   ZuploContext,
   ZuploRequest,
 } from "@zuplo/runtime";
+import { shouldLogApiSecurity } from "./api-security-logging";
 
 export function runtimeInit(runtime: RuntimeExtensions) {
   runtime.addPlugin(
@@ -16,12 +17,10 @@ export function runtimeInit(runtime: RuntimeExtensions) {
     key: environment.AKAMAI_API_SECURITY_KEY,
     // Enable the active prevention/protection feature
     enableProtection: true,
-    // optional filter function to exclude requests
+    // The unlock route carries a passphrase and returns private definitions.
+    // Exclude it before the existing JSON-only telemetry filter.
     shouldLog: async (request: ZuploRequest, context: ZuploContext) => {
-      if (request.headers.get("content-type") !== "application/json") {
-        return false;
-      }
-      return true;
+      return shouldLogApiSecurity(request);
     },
   }),
 );

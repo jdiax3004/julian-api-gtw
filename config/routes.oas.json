@@ -9,6 +9,37 @@
     "description": "Specification JSONs: [v2](/api-spec/v2), [v3](/api-spec/v3)."
   },
   "paths": {
+    "/api/testing-tools/unlock": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "x-internal": true,
+        "summary": "Unlock private testing tools",
+        "operationId": "unlock-private-testing-tools",
+        "responses": {
+          "200": {
+            "description": "Unlocked by the origin server"
+          },
+          "default": {
+            "description": "Unlock denied or unavailable"
+          }
+        },
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://origin-xyz.julian-labs.com"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        }
+      }
+    },
     "/api/auth/register": {
       "post": {
         "summary": "/api/auth/register",
